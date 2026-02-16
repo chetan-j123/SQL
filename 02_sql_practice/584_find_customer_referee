@@ -1,0 +1,20 @@
+/*
+LeetCode: Find Customer Referee
+Difficulty: Easy
+Database: PostgreSQL
+
+Problem:
+Find the names of customers who:
+- were NOT referred by customer with id = 2
+- OR have no referee (NULL)
+
+Important Note:
+In SQL, NULL comparison needs IS NULL.
+(referee_id != 2 will NOT include NULL values)
+*/
+
+SELECT
+    name
+FROM Customer
+WHERE referee_id != 2
+   OR referee_id IS NULL;
